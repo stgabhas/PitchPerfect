@@ -64,14 +64,14 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func chipmunkPlay(sender: UIButton) {
         // method that actually runs when pressed the chipmunk button
-        playAudioWithVariablePitch(1000)
+        playAudioWithVariablePitch(1300, rate: 1.5)
     }
     
     @IBAction func playDarthvaderAudio(sender: UIButton) {
         playAudioWithVariablePitch(-1000)
     }
     
-    func playAudioWithVariablePitch(pitch: Float){
+    func playAudioWithVariablePitch(pitch: Float, rate: Float = 1){
         // making sure you stop all audio before playing it back again
         audioPlayer.stop()
         audioEngine.stop()
@@ -86,6 +86,7 @@ class PlaySoundsViewController: UIViewController {
         var changePitchEffect = AVAudioUnitTimePitch()
         // updated the effect pitch to the arguement value this function was taking, 1000
         changePitchEffect.pitch = pitch
+        changePitchEffect.rate = rate
         // attach pitch effect to the audioEngine
         audioEngine.attachNode(changePitchEffect)
         
