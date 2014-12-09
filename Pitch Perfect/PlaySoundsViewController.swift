@@ -98,6 +98,7 @@ class PlaySoundsViewController: UIViewController {
         // use audioPlayerNode scheduleFile function
         // this function takes in an arguement called file of type AVAudioFile
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
         
         // start the audio engine and play the audio player
         audioPlayerNode.play()
