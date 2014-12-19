@@ -9,7 +9,6 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController id="vXZ-lx-hvc" customClass="RecordSoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -92,6 +91,7 @@
                         <segue destination="35v-cb-y4g" kind="show" identifier="stopRecording" id="JUq-Rr-TZ3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128" y="193"/>
         </scene>
@@ -195,18 +195,18 @@
                                 <exclude reference="RhM-J3-t4T"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BHG-U3-ECp"/>
-                                <exclude reference="QOX-rj-oMe"/>
-                                <exclude reference="l47-Ff-GWy"/>
-                                <exclude reference="nNz-13-cBX"/>
-                                <exclude reference="aea-vG-O0J"/>
-                                <exclude reference="gQz-JV-9lj"/>
-                                <exclude reference="YMy-g9-BTs"/>
-                                <exclude reference="eh0-9f-eyL"/>
-                                <exclude reference="5hj-ZW-SSu"/>
-                                <exclude reference="Wvu-Gp-tcc"/>
                                 <exclude reference="FcQ-60-dyS"/>
                                 <exclude reference="Z6B-GW-9aO"/>
+                                <exclude reference="aea-vG-O0J"/>
+                                <exclude reference="gQz-JV-9lj"/>
+                                <exclude reference="5hj-ZW-SSu"/>
+                                <exclude reference="Wvu-Gp-tcc"/>
+                                <exclude reference="YMy-g9-BTs"/>
+                                <exclude reference="eh0-9f-eyL"/>
+                                <exclude reference="l47-Ff-GWy"/>
+                                <exclude reference="nNz-13-cBX"/>
+                                <exclude reference="BHG-U3-ECp"/>
+                                <exclude reference="QOX-rj-oMe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -218,18 +218,18 @@
                                 <include reference="RhM-J3-t4T"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BHG-U3-ECp"/>
-                                <include reference="QOX-rj-oMe"/>
-                                <include reference="l47-Ff-GWy"/>
-                                <include reference="nNz-13-cBX"/>
-                                <include reference="aea-vG-O0J"/>
-                                <include reference="gQz-JV-9lj"/>
-                                <include reference="YMy-g9-BTs"/>
-                                <include reference="eh0-9f-eyL"/>
-                                <include reference="5hj-ZW-SSu"/>
-                                <exclude reference="Wvu-Gp-tcc"/>
                                 <exclude reference="FcQ-60-dyS"/>
                                 <include reference="Z6B-GW-9aO"/>
+                                <include reference="aea-vG-O0J"/>
+                                <include reference="gQz-JV-9lj"/>
+                                <include reference="5hj-ZW-SSu"/>
+                                <exclude reference="Wvu-Gp-tcc"/>
+                                <include reference="YMy-g9-BTs"/>
+                                <include reference="eh0-9f-eyL"/>
+                                <include reference="l47-Ff-GWy"/>
+                                <include reference="nNz-13-cBX"/>
+                                <include reference="BHG-U3-ECp"/>
+                                <include reference="QOX-rj-oMe"/>
                             </mask>
                         </variation>
                     </view>

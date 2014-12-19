@@ -64,14 +64,36 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func chipmunkPlay(sender: UIButton) {
         // method that actually runs when pressed the chipmunk button
-        playAudioWithVariablePitch(1300, rate: 1.5)
+        //playAudioWithVariablePitch(1300, rate: 1.2, overlap: 7)
+        playAudioWithEcho(2)
     }
     
     @IBAction func playDarthvaderAudio(sender: UIButton) {
         playAudioWithVariablePitch(-1000)
     }
     
-    func playAudioWithVariablePitch(pitch: Float, rate: Float = 1){
+    func playAudioWithEcho(soundEcho: NSTimeInterval) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changeDelay = AVAudioUnitDelay()
+        changeDelay.delayTime = soundEcho
+        
+        audioEngine.attachNode(changeDelay)
+        audioEngine.connect(audioPlayerNode, to: changeDelay, format: nil)
+        audioEngine.connect(changeDelay, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        audioPlayerNode.play()
+        
+    }
+    
+    func playAudioWithVariablePitch(pitch: Float, rate: Float = 1, overlap: Float = 8){
         // making sure you stop all audio before playing it back again
         audioPlayer.stop()
         audioEngine.stop()
@@ -87,6 +109,7 @@ class PlaySoundsViewController: UIViewController {
         // updated the effect pitch to the arguement value this function was taking, 1000
         changePitchEffect.pitch = pitch
         changePitchEffect.rate = rate
+        changePitchEffect.overlap = overlap
         // attach pitch effect to the audioEngine
         audioEngine.attachNode(changePitchEffect)
         
